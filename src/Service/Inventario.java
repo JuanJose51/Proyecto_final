@@ -11,8 +11,11 @@ public class Inventario {
 	public ArrayList<Vehiculo> getVehiculos() {
 		return vehiculos;
 	}
-	public void setVehiculos(ArrayList<Vehiculo> vehiculos) {
-		this.vehiculos = vehiculos;
+	public void setRemoverVehiculo(Vehiculo vehiculo) {
+		this.vehiculos.remove(vehiculo);
+	}
+	public void setAgregarVehiculo(Vehiculo vehiculo) {
+		this.vehiculos.add(vehiculo);
 	}
 	
 
