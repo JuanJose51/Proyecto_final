@@ -15,6 +15,52 @@ public class Concesionario {
 		this.mantenimientos = new ArrayList<>();
 		this.clientes = new ArrayList<>();
 	}
-	
-
+/****************************
+ *    METODOS DE CLIENTE    *
+ ****************************/
+	public boolean ExisteCliente(Cliente cliente) {
+		for(Cliente c:this.clientes) {
+			int numero =cliente.getNumeroTelefono();
+			int numeroLista=c.getNumeroTelefono();
+			if(numeroLista == numero) {
+			return true;
+			}
+		}
+		return false;
+	}
+	public boolean agregarCliente(Cliente cliente) {
+		boolean existe = ExisteCliente(cliente);
+		if(existe != true) {
+			this.clientes.add(cliente);
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	public Cliente buscarCliente(int numero) {
+		for(Cliente c : this.clientes) {
+			if(numero == c.getNumeroTelefono()) {
+				return c;
+			}
+		}
+		return null; 
+	}	
+	public boolean eliminarCliente(int numero) {
+		Cliente cliente = buscarCliente(numero);
+		if(cliente!=null) {
+		   clientes.remove(cliente);
+		   return true;
+		}
+		return false;
+	}
+	public boolean actualizarCliente(String nombre,String direccion, int numerotelefono, String correo, Cliente c) {
+		c.setNombre(nombre);
+		c.setDireccion(direccion);
+		c.setNumeroTelefono(numerotelefono);
+		c.setCorreo(correo);
+		return true;
+		
+		
+	}
 }
