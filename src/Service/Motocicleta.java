@@ -1,10 +1,10 @@
 package Service;
 
 public class Motocicleta extends Vehiculo {
-	protected String tipoManillar;
-	protected int numRuedas;
-	protected String tipoFreno;
-	protected String cilindrada;
+	private String tipoManillar;
+	private int numRuedas;
+	private String tipoFreno;
+	private String cilindrada;
 
 	public Motocicleta(String marca, String modelo, String vid, String color, int kilometrage, String año,
 			String tipoManillar, int numRuedas, String tipoFreno, String cilindrada) {
@@ -13,6 +13,14 @@ public class Motocicleta extends Vehiculo {
 		this.numRuedas = numRuedas;
 		this.tipoFreno = tipoFreno;
 		this.cilindrada = cilindrada;
+	}
+	
+	@Override
+	public String toString() {
+		return "Motocicleta [tipoManillar=" + tipoManillar + ", numRuedas=" + numRuedas + ", tipoFreno=" + tipoFreno
+				+ ", cilindrada=" + cilindrada + ", getMarca()=" + getMarca() + ", getModelo()=" + getModelo()
+				+ ", getVid()=" + getVid() + ", getColor()=" + getColor() + ", getKilometraje()=" + getKilometraje()
+				+ ", getAño()=" + getAño();
 	}
 
 	public String getTipoManillar() {

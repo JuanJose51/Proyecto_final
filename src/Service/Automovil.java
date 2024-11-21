@@ -1,10 +1,10 @@
 package Service;
 
 public class Automovil extends Vehiculo {
-	protected int numPuertas;
-	protected String tipoCombustible;
-	protected String tipoTransmicion;
-	protected String tipoTraccion;
+	private int numPuertas;
+	private String tipoCombustible;
+	private String tipoTransmicion;
+	private String tipoTraccion;
 
 	public Automovil(String marca, String modelo, String vid, String color, int kilometrage, String año, int numPuertas,
 			String tipoCombustible, String tipoTransmicion, String tipoTraccion) {
@@ -13,6 +13,14 @@ public class Automovil extends Vehiculo {
 		this.tipoCombustible = tipoCombustible;
 		this.tipoTransmicion = tipoTransmicion;
 		this.tipoTraccion = tipoTraccion;
+	}
+	
+	@Override
+	public String toString() {
+		return "Automovil numPuertas=" + numPuertas + "\n tipoCombustible=" + tipoCombustible + "\n tipoTransmicion="
+				+ tipoTransmicion + "\n tipoTraccion=" + tipoTraccion + "\n getMarca()=" + getMarca() + "\n getModelo()="
+				+ getModelo() + "\n getVid()=" + getVid() + "\n getColor()=" + getColor() + "\n getKilometraje()="
+				+ getKilometraje() + "\n getAño()=" + getAño();
 	}
 
 	public int getNumPuertas() {
@@ -46,5 +54,5 @@ public class Automovil extends Vehiculo {
 	public void setTipoTraccion(String tipoTaccion) {
 		this.tipoTraccion = tipoTaccion;
 	}
-
+	
 }

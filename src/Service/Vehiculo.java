@@ -1,6 +1,6 @@
 package Service;
 
-public class Vehiculo {
+public abstract class Vehiculo implements IVehiculo{
 	protected String marca;
 	protected String modelo;
 	protected String vid;
@@ -16,17 +16,21 @@ public class Vehiculo {
 		this.kilometraje = kilometrage;
 		this.año = año;
 	}
+	
+	public abstract String toString();
 
-	public String getMarca() {
-		return marca;
-	}
+	@Override
+    public String getMarca() {
+        return marca;
+    }
+
+    @Override
+    public String getModelo() {
+        return modelo;
+    }
 
 	public void setMarca(String marca) {
 		this.marca = marca;
-	}
-
-	public String getModelo() {
-		return modelo;
 	}
 
 	public void setModelo(String modelo) {
